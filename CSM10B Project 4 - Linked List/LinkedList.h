@@ -42,7 +42,7 @@ public:
 
 	void push_front(const T &element)
 	{
-		node *temp = std::unique_ptr<T>;
+		node<T> *temp = new node<T>;
 		temp->data = element;
 		temp->next = head;
 		head = temp;
