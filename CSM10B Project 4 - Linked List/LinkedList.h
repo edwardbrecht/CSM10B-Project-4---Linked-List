@@ -14,8 +14,8 @@ class LinkedList
 public:
 	LinkedList()
 	{
-		head = nullptr
-		tail = nullptr
+		head = nullptr;
+		tail = nullptr;
 		length = 0;
 	}
 
@@ -23,7 +23,7 @@ public:
 	
 	void push_back(const T &element)
 	{
-		node *temp = std::unique_ptr<T>;
+		node<T> *temp = new node<T>;
 		temp->data = element;
 		temp->next = nullptr;
 		++length;
@@ -38,18 +38,18 @@ public:
 			tail->next = temp;
 			tail = temp;
 		}
+	}
 
-		void push_front(const T &element)
-		{
-			node *temp = std::unique_ptr<T>;
-			temp->data = element;
-			temp->next = head;
-			head = temp;
-			++length;
-		}
+	void push_front(const T &element)
+	{
+		node *temp = std::unique_ptr<T>;
+		temp->data = element;
+		temp->next = head;
+		head = temp;
+		++length;
 	}
 
 private:
-	node *head, *tail; .
+	node<T> *head, *tail;
 	int length;
 };
