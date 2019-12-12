@@ -1,5 +1,5 @@
 // Edward Brecht
-// 12/11/2019
+// 12/12/2019
 
 #include "LinkedList.h"
 #include "Point.h"
@@ -8,6 +8,7 @@
 
 int main()
 {
+	// test list of type string
 	LinkedList<std::string> *stringList = new LinkedList<std::string>;
 	stringList->push_back("Back");
 	stringList->push_front("Front");
@@ -26,17 +27,16 @@ int main()
 
 	delete stringList;
 
-	// dsoesn't compile - error code C2280
-	/*
+	// test list of type point
 	LinkedList<Point> *pointList = new LinkedList<Point>;
 	Point p1(1, 1);
 	Point p2(1, 2);
 	Point p3(1, 3);
 	Point p4(1, 4);
-	pointList->push_back(p1);
-	pointList->push_front(p2);
-	pointList->insert(p3, 2);
-	pointList->insert(p4, 3);
+	pointList->push_back(p4);
+	pointList->push_front(p1);
+	pointList->insert(p2, 2);
+	pointList->insert(p3, 3);
 
 	std::cout << pointList->get_front() << std::endl;
 	std::cout << pointList->get_element(2) << std::endl;
@@ -48,5 +48,6 @@ int main()
 	pointList->pop_back();
 
 	delete pointList;
-	*/
+	
+	return(EXIT_SUCCESS);
 }

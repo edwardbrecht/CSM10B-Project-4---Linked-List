@@ -1,5 +1,5 @@
 // Edward Brecht
-// 12/10/2019
+// 12/12/2019
 
 #pragma once
 
@@ -33,6 +33,12 @@ public:
 	~LinkedList()
 	{
 		current = head;
+
+		if (current == nullptr)
+		{
+			return;
+		}
+
 		while (current->next != nullptr)
 		{
 			previous = current;

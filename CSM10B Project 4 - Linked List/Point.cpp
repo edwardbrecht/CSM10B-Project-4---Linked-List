@@ -1,8 +1,13 @@
 // Edward Brecht
-// 12/10/2019
+// 12/12/2019
 
 #include "Point.h"
 #include <cmath>
+
+
+Point::Point() : m_x{ 0 }, m_y{ 0 }
+{
+}
 
 //Constructor using C++ 
 Point::Point(const int x, const int y) : m_x{ x }, m_y{ y }
@@ -39,6 +44,18 @@ double Point::distanceFromOrigin() const
     return sqrt(pow(m_x, 2) + pow(m_y, 2));
 }
 
+bool Point::operator== (const Point &other) const
+{
+	if (m_x == other.m_x && m_y == other.m_y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	return false;
+}
 
 std::ostream& operator<< (std::ostream& output, const Point& point)
 {
