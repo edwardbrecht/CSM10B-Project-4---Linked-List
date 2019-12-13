@@ -4,7 +4,7 @@
 #include "Point.h"
 #include <cmath>
 
-
+// default constructor
 Point::Point() : m_x{ 0 }, m_y{ 0 }
 {
 }
@@ -44,6 +44,7 @@ double Point::distanceFromOrigin() const
     return sqrt(pow(m_x, 2) + pow(m_y, 2));
 }
 
+// operator == overload
 bool Point::operator== (const Point &other) const
 {
 	if (m_x == other.m_x && m_y == other.m_y)
@@ -57,6 +58,7 @@ bool Point::operator== (const Point &other) const
 	return false;
 }
 
+// operator << overload - displays as (x, y)
 std::ostream& operator<< (std::ostream& output, const Point& point)
 {
 	output << "(" << point.m_x << ", " << point.m_y << ")";
