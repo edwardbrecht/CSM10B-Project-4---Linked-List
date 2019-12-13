@@ -5,7 +5,6 @@
 #include "Point.h"
 #include <string>
 #include <iostream>
-#include <memory>
 
 int main()
 {
