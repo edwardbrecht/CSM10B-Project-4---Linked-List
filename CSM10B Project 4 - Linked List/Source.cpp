@@ -5,6 +5,7 @@
 #include "Point.h"
 #include <string>
 #include <iostream>
+#include <memory>
 
 int main()
 {
@@ -29,25 +30,28 @@ int main()
 
 	// test list of type point
 	LinkedList<Point> *pointList = new LinkedList<Point>;
-	Point p1(1, 1);
-	Point p2(1, 2);
-	Point p3(1, 3);
-	Point p4(1, 4);
-	pointList->push_back(p4);
-	pointList->push_front(p1);
-	pointList->insert(p2, 2);
-	pointList->insert(p3, 3);
+	Point *p1 = new Point(1, 1);
+	Point *p2 = new Point(1, 2);
+	Point *p3 = new Point(1, 3);
+	Point *p4 = new Point(1, 4);
+	pointList->push_back(*p4);
+	pointList->push_front(*p1);
+	pointList->insert(*p2, 2);
+	pointList->insert(*p3, 3);
 
 	std::cout << pointList->get_front() << std::endl;
 	std::cout << pointList->get_element(2) << std::endl;
 	std::cout << pointList->get_back() << std::endl;
 
-	pointList->erase(p2);
+	pointList->erase(*p2);
 	pointList->erase(3);
 	pointList->pop_front();
 	pointList->pop_back();
 
 	delete pointList;
-	
+	delete p1;
+	delete p2;
+	delete p3;
+	delete p4;
 	return(EXIT_SUCCESS);
 }
